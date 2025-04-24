@@ -4,8 +4,8 @@ const port = process.env.PORT || 3001;
 
 //app.get("/", (req, res) => res.type('html').send(html));
 
-app.get("/:time", (req, res) => {
-  let t = req.params.time ? req.params.time : '10';
+app.get("/:time?", (req, res) => {
+  let t = req.params.time ? req.params.time : '0';
   setTimeout(() => {
     return res.send('success');
   }, t);
