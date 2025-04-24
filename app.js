@@ -6,8 +6,9 @@ const port = process.env.PORT || 3001;
 
 app.get("/:time?", (req, res) => {
   let t = req.params.time ? req.params.time : '0';
+  const data = { message: 'Hello, world!', status: 'success' };
   setTimeout(() => {
-    return res.send('success');
+    res.json(data);
   }, t);
 });
 
