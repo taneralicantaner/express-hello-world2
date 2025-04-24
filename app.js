@@ -4,10 +4,11 @@ const port = process.env.PORT || 3001;
 
 //app.get("/", (req, res) => res.type('html').send(html));
 
-app.get("/", (req, res) => {
+app.get("/:time", (req, res) => {
+  let t = req.params.time ? req.params.time : '10';
   setTimeout(() => {
     return res.send('success');
-  }, "120000");
+  }, t);
 });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
