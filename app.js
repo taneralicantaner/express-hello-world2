@@ -6,8 +6,8 @@ const port = process.env.PORT || 3001;
 
 app.get('/', (req, res) => {
   const data = { message: 'Hello, world!', status: 'success' };
-  if(req.params.code){
-  res.status(req.params.code);
+  if(req.query.code){
+  res.status(req.query.code);
   }else{
       res.status(200);
   }
