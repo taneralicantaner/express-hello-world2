@@ -6,6 +6,11 @@ const port = process.env.PORT || 3001;
 
 app.get('/', (req, res) => {
   const data = { message: 'Hello, world!', status: 'success' };
+  if(req.params.code){
+  res.status(req.params.code);
+  }else{
+      res.status(200);
+  }
   res.json(data);
 });
 
