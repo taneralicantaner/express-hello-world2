@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 //app.get("/", (req, res) => res.type('html').send(html));
-
+app.use(express.json()) 
 app.get('/', (req, res) => {
   const data = { message: 'Hello, world!', status: 'success' };
   if(req.query.code){
