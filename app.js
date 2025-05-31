@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   }else{
       res.status(200);
   }
-  res.json(data);
+  res.json(req.body);
 });
 
 app.put('/', (req, res) => {
