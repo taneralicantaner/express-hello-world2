@@ -14,6 +14,16 @@ app.get('/', (req, res) => {
   res.json(data);
 });
 
+app.put('/', (req, res) => {
+  const data = { message: 'Hello, world!', status: 'success' };
+  if(req.query.code){
+  res.status(parseInt(req.query.code));
+  }else{
+      res.status(200);
+  }
+  res.json(req.body);
+});
+
 app.get('/:time', (req, res) => {
   let t = req.params.time;
   const data = { message: 'Hello, world!', status: 'success' };
